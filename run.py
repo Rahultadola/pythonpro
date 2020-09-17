@@ -1,4 +1,4 @@
-from treasureporno import create_app
+from videosurfing import create_app
 
 app = create_app()
 

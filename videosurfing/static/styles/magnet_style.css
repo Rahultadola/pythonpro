@@ -1,0 +1,41 @@
+.respons{
+    display: block;
+    overflow-x: auto;
+    background:rgba(62, 42, 33, 0.3) ;
+}
+
+.respons:hover{
+	background:rgba(62, 42, 33, 0.7) ;
+}
+
+.gid{
+	display: inline-block;
+	margin: 2px;
+	padding: 3px;
+	width: 200px;
+
+}
+
+.torr_title{
+	display: inline-block;
+	margin: 2px;
+	padding: 3px;
+}
+
+.downloaded{
+	display: inline-block;
+	margin: 2px;
+	padding: 3px;
+}
+
+.post_link{
+	display: inline-block;
+	margin: 2px;
+	padding: 3px;
+}
+
+.refr{
+	display: inline-block;
+	margin: 2px;
+	padding: 3px;
+}

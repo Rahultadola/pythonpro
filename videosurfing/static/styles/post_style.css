@@ -1,0 +1,156 @@
+﻿<style type = "text/css">
+
+.posts{ width:inherit;margin: auto;background-color:none;}
+
+.post {
+    
+    float: none;
+    position: relative;
+    -webkit-box-shadow: none;
+    -moz-box-shadow:none;
+    box-shadow :none;
+    overflow: hidden;
+    opacity: 0.8;
+    filter: alpha(opacity=80);
+    
+}
+ 
+
+.post:hover{
+    -webkit-box-shadow: 0 0 8px rgba(0,0,0,0.8);
+    -moz-box-shadow: 0 0 8px rgba(0,0,0,0.8);
+    box-shadow :0 0 8px rgba(0,0,0,0.8);
+    opacity: 1;
+    filter: alpha(opacity=100);
+    
+}
+
+.img_holder{
+    width: 100vh;
+    max-height:calc(100% - 40px);
+ 
+    display: block;
+    position: relative;
+    top: 0;
+    display: table-cell;
+    vertical-align: middle ;
+ }
+
+.thumb_img{
+  height:130px;
+  width:100%;
+}
+
+.dura_time{position: absolute;bottom: 5px;right: 5px; padding-left: 5px;padding-right: 5px;font-size: 11px;color: azure;border-radius: 2px;background-color: rgba(0,0,0,0.3);}
+.vid_info{width: 100%;background-color: rgb(55, 20, 1,1);float:left;display: block;line-height: 1em;overflow: visible;bottom: 0;top: auto;position: relative; height:55px;}
+.vid_title{color: rgba(190, 190, 190, 0.7);overflow: hidden;line-height: 1em; margin: 5px 5px 0px 5px;height: 25px;font-size: 12px;}
+.vid_views{margin: 5px;color: rgba(253, 199, 126, 0.7);font-size: -webkit-xxx-large;}
+
+
+
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+
+/* Styles newly added not part of posts*/
+.gallery {background:#00000000}
+
+.gallery:hover>a >.post>.vid_info>.vid_title{color: rgb(255, 255, 255)}
+
+
+.gallery:hover>a >.post>.vid_info>.vid_views{ color:  rgb(234, 210, 178)}
+
+
+
+.desc {
+  padding: 5px;
+  
+}
+
+.responsive {
+  padding: 3px;
+  float: left;
+  width: 24.99999%;
+}
+
+
+
+
+
+    
+@media (max-width:1080px) and (min-width:992px){
+      .responsive {
+    width: 25%;
+    margin: 3px 0;
+  }  
+        
+    }
+
+
+@media only screen and (max-width: 992px) {
+  .responsive {
+    width: 49.99999%;
+    margin: 6px 0;
+  }
+
+.thumb_img{
+  height:260px;
+  width:100%;
+}
+
+}
+
+@media only screen and (max-width: 720px) {
+  .responsive {
+    width: 49.99999%;
+    margin: 3px 0;
+  }
+
+  div.gallery{
+     margin-left: 0;
+      margin-right: 0;
+        width:100%;
+    }
+    .thumb_img{
+  height:150px;
+  width:100%;
+}
+}
+
+
+
+@media only screen and (max-width: 400px) {
+.thumb_img{
+  height:120px;
+  width:100%;
+}
+
+    
+}
+
+@media only screen and (max-width: 320px) {
+  .responsive {
+    width: 100%;
+    padding: 0 ;
+  }
+  .thumb_img{
+  height:200px;
+  width:100%;
+}
+   
+  } 
+   
+
+
+    
+    
+    
+    
+    
+
+
+
+</style>

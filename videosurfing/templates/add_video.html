@@ -1,0 +1,96 @@
+﻿{%  extends "layout.html"  %}
+
+{% block style  %}
+ <link  rel="stylesheet" type="text/css" href="{{ url_for('static' ,  filename = 'styles/post_style.css') }}">
+
+{% endblock %}
+
+
+{% block body %}
+   <form method="POST" action="" enctype="multipart/form-data">
+                {{ form.hidden_tag() }}
+                <fieldset class="form-group">
+                    <legend class="border-bottom mb-4">{{ legend }}</legend>
+                    
+                    <div class="form-group">
+                        {{ form.title.label(class="form-control-lebel") }}
+                        
+                        {% if form.title.errors %}
+                            {{ form.title(class="form-control form-control-lg is-valid")}}
+                            <div class="invalid-feedback">
+                                {%for error in form.title.errors %}
+                                    <span>{{ error }}</span>
+                                {% endfor %}
+                            </div>
+                        {% else %}
+                            {{ form.title(class="form-control form-control-lg") }}
+                        {% endif %} 
+                    </div>
+                    <div class="form-group">
+                        {{ form.vid_file.label(class="form-control-lebel") }}
+                        
+                        {% if form.vid_file.errors %}
+                            {{ form.vid_file(class="form-control form-control-lg is-valid")}}
+                            <div class="invalid-feedback">
+                                {%for error in form.vid_file.errors %}
+                                    <span>{{ error }}</span>
+                                {% endfor %}
+                            </div>
+                        {% else %}
+                            {{ form.vid_file(class="form-control form-control-lg") }}
+                        {% endif %} 
+                    </div>
+
+                    <div class="form-group">
+                        {{ form.thumb_image_file.label(class="form-control-lebel") }}
+                        
+                        {% if form.thumb_image_file.errors %}
+                            {{ form.thumb_image_file(class="form-control form-control-lg is-valid")}}
+                            <div class="invalid-feedback">
+                                {%for error in form.thumb_image_file.errors %}
+                                    <span>{{ error }}</span>
+                                {% endfor %}
+                            </div>
+                        {% else %}
+                            {{ form.thumb_image_file(class="form-control form-control-lg") }}
+                        {% endif %} 
+                    </div>
+
+                    <div class="form-group">
+                        {{ form.production.label(class="form-control-lebel") }}
+                        
+                        {% if form.production.errors %}
+                            {{ form.production(class="form-control form-control-lg is-valid")}}
+                            <div class="invalid-feedback">
+                                {%for error in form.production.errors %}
+                                    <span>{{ error }}</span>
+                                {% endfor %}
+                            </div>
+                        {% else %}
+                            {{ form.production(class="form-control form-control-lg") }}
+                        {% endif %} 
+                    </div>
+
+                    <div class="form-group">
+                        {{ form.featurtag.label(class="form-control-lebel") }}
+                        
+                        {% if form.featurtag.errors %}
+                            {{ form.featurtag(class="form-control form-control-lg is-valid")}}
+                            <div class="invalid-feedback">
+                                {%for error in form.featurtag.errors %}
+                                    <span>{{ error }}</span>
+                                {% endfor %}
+                            </div>
+                        {% else %}
+                            {{ form.featurtag(class="form-control form-control-lg") }}
+                        {% endif %} 
+                    </div>
+                    
+                </fieldset>
+                <div class="form-group">
+                    {{ form.submit(class="btn btn-outline-info") }}
+                </div>
+                
+        </form>
+    
+{% endblock %}

@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {% if title%}
+      <title>videosurfing - {{ title }}</title>
+    {% else %}
+      <title>videosurfing</title>
+    {% endif %}
+      
+    <meta charset="UTF-8">
+    <meta name="videosurfing" content="Adult, XXX, Porn, 18+, Videos, Sexy, 69 " />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Lexend+Deca&display=swap" rel="stylesheet">
+    <link  rel="stylesheet" type="text/css" href="{{ url_for('static' ,  filename = 'styles/hom.css') }}">
+    <link  rel="stylesheet" type="text/css" href="{{ url_for('static' ,  filename = 'styles/theme-teal.css') }}">
+
+    {% block style %}
+
+    {% endblock %}
+    
+    <style>
+     html {font-family: 'Lexend Deca', sans-serif;height:100%; background:linear-gradient(to left top,#e6bb86,#523b21); background-attachment:fixed;}
+    
+     ::-moz-selection { /* Code for Firefox */
+      color: hotpink;
+      background: #000;
+    }
+
+    ::selection {
+      color: hotpink;
+      background: #000;
+    }
+   
+    </style>
+
+    {% block script %}
+
+    {% endblock %}
+</head>
+   
+         
+<body>
+<!-- sidebarl -->
+<nav class="sidekibarl bar-blockl collapsel large theme animate-left card" id="mySidebar">
+  <div class="logo hide-large theme" style="height: 43px"><a class="bar-subitem buttonl left theme hide-large " href="javascript:void(0)" onclick="w3_open()"><i class="fa fa-bars"></i></a>
+        <div href="#" class="bar-subitem buttonl right hide-large theme ourposter" onclick="document.getElementById('id01').style.display='block'"><img src="{{url_for('static',filename = 'images/logofin.png')}}" alt="videosurfing.com" width="120" height="24">
+        </div>
+  </div>
+  <a class="bar-item buttonr theme " href="{{ url_for('main.home')}}"><div class=" faicon left"><i class="fa fa-home faicon" ></i></div><div class="iconamee ">Home</div></a>
+  <a class="bar-item buttonr theme" href="{{ url_for('main.tag_page', page_name = 'recent', tag='Recent') }}"><div class=" faicon left"><i class="fa fa-anchor faicon" ></i></div><div class=" iconamee ">Recent</div></a>
+  <a class="bar-item buttonr theme" href="{{ url_for('main.tag_page', page_name = 'mostviewed', tag='Most Viewed') }}"><div class="faicon left" style="padding-right: 10px;"><i class="fa fa-free-code-camp faicon" ></i></div><div class="iconamee ">Top Viewed</div></a>
+  
+  <a class="bar-item buttonr theme" href="{{ url_for('main.category')}}"><div class=" faicon left"><i class="fa fa-tasks faicon" ></i></div><div class=" iconamee ">Category</div></a>
+</nav>
+
+<!-- Navbar -->
+<div class="top theme ">
+  <div class="bar theme left-align large card ">
+    <div class="theme" style="width: 100%">
+      <a class="bar-item buttonl left theme large " href="javascript:void(0)" onclick="sidebar_open()"><i class="fa fa-bars"></i></a></div>
+    <div href="#" class="bar-item buttonl theme" onclick="document.getElementById('id01').style.display='block'"><img src="  {{url_for('static',filename = 'images/logofin.png')}}" alt="videosurfing.com"  width="120" height="24"></div>
+  
+    
+    <!--
+      {% if current_user.is_authenticated %}
+        <a class="bar-item buttonl right theme" href="{{ url_for('users.account') }}">Account</a>
+        <a class="bar-item buttonl right theme" href="{{ url_for('users.logout') }}">Logout</a>
+      {% else %}
+        <a class=" buttonr right theme" href="{{ url_for('users.login') }}">Login</a>
+        <a class=" buttonr right theme" href="{{ url_for('users.register') }}">Register</a>
+      {% endif %}
+    
+     <div href="#" class=" search-box bar-item buttonr right theme" title="Search"><input class="search-txt" type="text" name="" placeholder="Type to Search"><i class="fa fa-search"></i>
+     </div>
+
+     -->
+  </div>
+  
+</div>   
+
+    
+<!-- Modal -->
+<div id="id01" class="modal" >
+    <div class="modal-content card-4 animate-top" style="z-index: 5;">
+      <header class="container theme-d5" style="align-content: center"> 
+        <span onclick="document.getElementById('id01').style.display='none'"
+        class="buttonr display-topright">×</span>
+        <img src="{{ url_for('static',filename = 'images/logofin.png') }}" alt="videosurfing.com" width="240" height="48" >
+        <h5><i class="fa fa-smile-o"></i></h5>
+      </header>
+      <footer class="container theme-d3">
+        <p>Contact at admin@videosurfing.com</p>
+      </footer>
+    </div>
+</div>    
+    
+<!-- Overlay effect when opening sidebar on small screens -->
+<div class="overlay hide-large" onclick="sidebar_close()" title="close side menu" id="myOverlay"></div>
+
+
+<!-- Flashed message -->
+{% with messages = get_flashed_messages(with_categories = true) %}
+    {% if messages %}
+      <div id="id02" class="modal" style="display: block !important;">
+          <div class="modal-content card-4 animate-top">
+            <header class="container theme-d5" style="align-content: center"> 
+              <span onclick="document.getElementById('id02').style.display='none'"
+              class="buttonr display-topright">×</span>
+              {% for category, message in messages %}
+                <div class="alert alert-{{ category }} ">
+                  {{ message }}
+                </div>
+              {% endfor %}
+              
+            </header>
+          </div>
+      </div>  
+    {%endif%}
+{%endwith%}
+
+
+
+<!-- Main content: shift it to the right by 250 pixels when the sidebar is visible -->
+<div class="main" id="main" style="margin-left:250px; margin-top: 50px ;margin-right:50px " >
+{%  block body  %}
+
+
+
+{% endblock %}     
+</div>
+<!-- END MAIN -->
+
+
+<button onclick="topFunction()" id="topBtn" class="topBtn" title="Go to top"><i class="fa fa-arrow-up" aria-hidden="true"></i></button>    
+    
+<script>
+// Get the Sidebar
+var mySidebar = document.getElementById("mySidebar");
+// Get the DIV with overlay effect
+var overlayBg = document.getElementById("myOverlay");
+// Toggle between showing and hiding the sidebar, and add overlay effect
+function sidebar_open() {
+  if (mySidebar.style.display === 'block') {
+    mySidebar.style.display = 'none';
+    overlayBg.style.display = "none";
+  } else {
+    mySidebar.style.display = 'block';
+    overlayBg.style.display = "block";
+  }
+}
+
+// Close the sidebar with the close button
+function sidebar_close() {
+  mySidebar.style.display = "none";
+  overlayBg.style.display = "none";
+}
+       
+// Get the modal
+var modal = document.getElementById('id01');
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+
+//Top- Scroll button
+// When the user scrolls down 20px from the top of the document, show the button
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+}
+</script>   
+</body>
+</html>

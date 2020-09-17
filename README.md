@@ -8,3 +8,4 @@ User accounts (register, login, reset account using email).
 aria2c is used for downloading file from torrent network
 
 Its incomplete (design and more features can be added)
+Not every route added in front-end.Direct links can be found in code 

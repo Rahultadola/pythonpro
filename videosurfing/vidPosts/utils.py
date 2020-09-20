@@ -191,7 +191,7 @@ def ffmpeg_cmd(title, last_saved):
             name_of_file = title +'_480' + '.mp4'
             out_path = os.path.join(fp, name_of_file)
             video720 = name_of_file
-            cmd = ['ffmpeg','-y', '-i', last_saved, '-s', ratio,'-b:v', '768k', '-c:a', 'aac','-b:a', '64k', out_path]
+            cmd = ['ffmpeg','-y', '-i', last_saved, '-s', ratio,'-b:v', '768k', '-c:a', 'aac','-b:a', '64k', out_path] #to increase quality change '768k' to heigher '1500k' 
             subprocess.check_output(cmd, shell = True)
             last_saved = ''+out_path 
             path_480 = last_saved

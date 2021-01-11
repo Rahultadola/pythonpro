@@ -1,4 +1,4 @@
-# pythonpro
+# Videosurfing
 Is a flask app, 
 Is just a basic app which lets you upload your video to server or download from torrent network using megnetlink or torrent file.
 Then the video is converted to 3 different bit-rate videos using ffmpeg commands.
